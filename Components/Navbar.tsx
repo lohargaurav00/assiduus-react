@@ -3,11 +3,9 @@ import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';;
 import InputBase from '@mui/material/InputBase';
 import { Avatar, Badge } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -62,24 +60,7 @@ export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static" className='bg-white text-black' color='inherit' variant='outlined'>
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="Github"
-          >
-            <GitHubIcon fontSize='large'/>
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            className='font-bold text-2xl'
-          >
-            Gaurav
-          </Typography>
+        <Toolbar sx={{ marginLeft: 'auto' }}>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
