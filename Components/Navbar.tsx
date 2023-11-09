@@ -1,73 +1,80 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';;
-import InputBase from '@mui/material/InputBase';
-import { Avatar, Badge } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+"use client";
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import InputBase from "@mui/material/InputBase";
+import { Avatar, Badge } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: 'var(--bg-primary)',
+  backgroundColor: "var(--bg-primary)",
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: "auto",
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: 'var(--text-tertiary)',
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "var(--text-tertiary)",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
+  color: "inherit",
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '20ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "20ch",
     },
   },
 }));
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
+  "& .MuiBadge-badge": {
     right: 6,
     top: 6,
     border: `1px solid white`,
-    backgroundColor: 'var(--green-primary)',
+    backgroundColor: "var(--green-primary)",
   },
 }));
 
-export default function SearchAppBar() {
+const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" className='bg-white text-black' color='inherit' variant='outlined'>
-        <Toolbar sx={{ marginLeft: 'auto' }}>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar
+        position="static"
+        className="bg-white text-black"
+        color="inherit"
+        elevation={0}
+        variant="outlined"
+      >
+        <Toolbar sx={{ marginLeft: "auto" }}>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ "aria-label": "search" }}
             />
           </Search>
           <IconButton
@@ -75,7 +82,7 @@ export default function SearchAppBar() {
             aria-label="show notifications"
             color="inherit"
           >
-            <StyledBadge badgeContent='' overlap='circular' variant='dot'>
+            <StyledBadge badgeContent="" overlap="circular" variant="dot">
               <NotificationsIcon />
             </StyledBadge>
           </IconButton>
@@ -84,7 +91,7 @@ export default function SearchAppBar() {
             aria-label="show notifications"
             color="inherit"
           >
-            <Avatar alt="Gaurav Lohar" src='/gaurav.png' />
+            <Avatar alt="Gaurav Lohar" src="/gaurav.png" />
           </IconButton>
           <IconButton
             size="large"
@@ -97,4 +104,6 @@ export default function SearchAppBar() {
       </AppBar>
     </Box>
   );
-}
+};
+
+export default Navbar;

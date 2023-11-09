@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -12,7 +13,7 @@ import { paths } from '@/utils/paths';
 
 const drawerWidth = 240;
 
-export default function PermanentDrawerLeft() {
+const Sidebar = () => {
   const [active, setActive] = React.useState<string>('Dashboard');
 
     
@@ -30,6 +31,7 @@ export default function PermanentDrawerLeft() {
         }}
         variant="permanent"
         anchor="left"
+        disablePortal
       >
         <Toolbar className='mb-6'>
           <IconButton
@@ -91,3 +93,5 @@ export default function PermanentDrawerLeft() {
     </Box>
   );
 }
+
+export default Sidebar;
