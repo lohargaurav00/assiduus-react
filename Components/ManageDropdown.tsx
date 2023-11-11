@@ -36,7 +36,7 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  color: "var(--text-primary)",
+  color: "var(--text-secondary)",
   borderColor: "var(--text-tertiary)",
   textTransform: "capitalize",
   fontWeight: "bold",
