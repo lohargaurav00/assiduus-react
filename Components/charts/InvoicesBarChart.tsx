@@ -11,7 +11,7 @@ const InvoicesBarChart = () => {
   const svgRef = React.useRef<SVGSVGElement>(null);
   const { month } = useMonthStore();
   const data: InvoicesWeekDataI[] = useInvoicesWeekData(month);
-  console.log(data);
+
   const width: string | number = 800;
   const height: string | number = 280;
 
