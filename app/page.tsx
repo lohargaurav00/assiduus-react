@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import CardGrid from "@/components/CardGrid";
 
 const page = () => {
+
   return (
     <>
       <Navbar />

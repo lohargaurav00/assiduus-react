@@ -1,31 +1,16 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import { zoom, zoomIdentity } from "d3-zoom";
+import { zoom } from "d3-zoom";
 
-const generateDataForCurrentMonth = () => {
-  const currentDate = new Date();
-  const currentMonth = 4;
-  const currentYear = currentDate.getFullYear();
-  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate(); // Get the last day of the month
-
-  const data = Array.from({ length: daysInMonth }, (_, index) => {
-    const date = new Date(currentYear, currentMonth, index + 1);
-    const value = Math.floor(Math.random() * 90) + 10; // Generate a random value less than 100
-    return { date, value };
-  });
-
-  return data;
-};
-
-type Data = {
-  date: Date;
-  value: number;
-}[];
+import { useDataWithMonth, Data } from "../hooks/useLinechartData";
+import useMonthStore from "@/hooks/useMonthStore";
 
 const Linechart: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
-  const [data, setData] = useState<Data>(generateDataForCurrentMonth());
+  const { month } = useMonthStore();
+  const data = useDataWithMonth(month);
+
   const width: string | number = 800;
   const height: string | number = 280;
 
