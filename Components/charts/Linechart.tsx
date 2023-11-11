@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { zoom } from "d3-zoom";
 
-import { useDataWithMonth, Data } from "../hooks/useLinechartData";
+import { useDataWithMonth, Data } from "../../hooks/useLinechartData";
 import useMonthStore from "@/hooks/useMonthStore";
 
 const Linechart: React.FC = () => {
