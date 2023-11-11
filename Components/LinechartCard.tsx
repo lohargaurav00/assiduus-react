@@ -1,14 +1,20 @@
 import React from "react";
 import BasicCard from "./BasicCard";
 import Linechart from "./Linechart";
-import Dropdown from "./MonthDropdown";
+import MonthDropdown from "./MonthDropdown";
+import ManageDropdown from "./ManageDropdown";
 
 const LinechartCard = () => {
   return (
     <BasicCard
       title="Checking account"
       content={<Linechart />}
-      action={<Dropdown />}
+      action={
+        <div className="inline-flex gap-2">
+          <ManageDropdown />
+          <MonthDropdown />
+        </div>
+      }
     />
   );
 };
