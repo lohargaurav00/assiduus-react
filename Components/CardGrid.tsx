@@ -5,6 +5,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import LinechartCard from "./LinechartCard";
 import AccountTableCard from "./AccountTableCard";
 import InvoicesCard from "./InvoicesCard";
+import TotalCashFlowCard from "./TotalCashFlowCard";
 
 const CardGrid = () => {
   return (
@@ -24,7 +25,7 @@ const CardGrid = () => {
           <InvoicesCard />
         </Grid>
         <Grid xs={6}>
-          <LinechartCard />
+          <TotalCashFlowCard />
         </Grid>
         <Grid xs={6}>
           <AccountTableCard />
