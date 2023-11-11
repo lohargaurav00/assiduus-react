@@ -3,6 +3,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import LinechartCard from "./LinechartCard";
+import AccountTableCard from "./AccountTableCard";
 
 const CardGrid = () => {
   return (
@@ -25,7 +26,7 @@ const CardGrid = () => {
           <LinechartCard />
         </Grid>
         <Grid xs={6}>
-          <LinechartCard />
+          <AccountTableCard />
         </Grid>
       </Grid>
     </Box>

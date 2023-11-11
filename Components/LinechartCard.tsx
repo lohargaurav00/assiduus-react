@@ -1,6 +1,6 @@
 import React from "react";
 import BasicCard from "./BasicCard";
-import Linechart from "./Linechart";
+import Linechart from "./charts/Linechart";
 import MonthDropdown from "./MonthDropdown";
 import ManageDropdown from "./ManageDropdown";
 
