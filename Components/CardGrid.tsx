@@ -12,12 +12,12 @@ const CardGrid = () => {
     <Box
       sx={{
         flexGrow: 1,
-        margin: "40px 40px 40px 280px",
-        height: "calc(100vh - 126px)",
+        margin: "30px 30px 30px 270px",
+        height: "calc(100vh - 1236px)",
         maxWidth: "100%",
       }}
     >
-      <Grid container spacing={4} height={"100%"}>
+      <Grid container spacing={3} height={"100%"}>
         <Grid xs={6}>
           <LinechartCard />
         </Grid>

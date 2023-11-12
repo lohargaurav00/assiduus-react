@@ -14,7 +14,7 @@ const InvoicesBarChart = () => {
   const data: TotalCashFlowDataI[] = useTotalCashFlowData(month);
 
   const width: string | number = 800;
-  const height: string | number = 280;
+  const height: string | number = 260;
 
   useEffect(() => {
     const svg = d3

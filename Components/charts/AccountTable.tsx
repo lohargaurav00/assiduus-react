@@ -27,7 +27,7 @@ const AccountTable: FC = () => {
         aria-label="simple table"
         sx={{
           "& .MuiTableCell-root": {
-            padding: "8px",
+            padding: "6px",
             border: 0,
             fontWeight: 700,
             textTransform: "capitalize",
@@ -42,7 +42,7 @@ const AccountTable: FC = () => {
           }}
         >
           <TableRow>
-            <TableCell align="left" width={"60%"}>
+            <TableCell align="left" >
               Account
             </TableCell>
             <TableCell align="left">This Month</TableCell>
@@ -58,7 +58,7 @@ const AccountTable: FC = () => {
         >
           {rowsData.map((row) => (
             <TableRow key={row.account}>
-              <TableCell>{row.account}</TableCell>
+              <TableCell  >{row.account}</TableCell>
               <TableCell align="left">{row.thisMonth}</TableCell>
               <TableCell align="left">{row.ytd}</TableCell>
             </TableRow>
