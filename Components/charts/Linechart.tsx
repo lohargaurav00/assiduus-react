@@ -98,8 +98,8 @@ const Linechart: React.FC = () => {
       .attr("class", "line")
       .attr("d", generatedScaleLine as any)
       .attr("fill", "none")
-      .attr("stroke", "#47b747")
-      .attr("stroke-width", 2);
+      .attr("stroke", "var(--green-secondary)")
+      .attr("stroke-width", 3);
   }, [data, width, height, minDate, maxDate]);
 
   return <svg ref={svgRef} />;
