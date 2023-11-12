@@ -2,79 +2,16 @@ import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { zoom } from "d3-zoom";
 
-import {
-  useInvoicesWeekData,
-  InvoicesWeekDataI,
-} from "@/hooks/useInvoicesWeekData";
 import useMonthStore from "@/hooks/useMonthStore";
+import {
+  useTotalCashFlowData,
+  TotalCashFlowDataI,
+} from "@/hooks/useTotalCashFlowData";
 
-const monthsData = [
-  {
-    month: "January",
-    value1: 78,
-    value2: 80,
-  },
-  {
-    month: "February",
-    value1: 67,
-    value2: 90,
-  },
-  {
-    month: "March",
-    value1: 45,
-    value2: 60,
-  },
-  {
-    month: "April",
-    value1: 23,
-    value2: 30,
-  },
-  {
-    month: "May",
-    value1: 34,
-    value2: 40,
-  },
-  {
-    month: "June",
-    value1: 56,
-    value2: 70,
-  },
-  {
-    month: "July",
-    value1: 78,
-    value2: 80,
-  },
-  {
-    month: "August",
-    value1: 67,
-    value2: 90,
-  },
-  {
-    month: "September",
-    value1: 45,
-    value2: 60,
-  },
-  {
-    month: "October",
-    value1: 23,
-    value2: 30,
-  },
-  {
-    month: "November",
-    value1: 34,
-    value2: 40,
-  },
-  {
-    month: "December",
-    value1: 56,
-    value2: 70,
-  },
-];
 const InvoicesBarChart = () => {
   const svgRef = useRef<SVGSVGElement>(null);
-  //   const { month } = useMonthStore();
-  //   const data: InvoicesWeekDataI[] = useInvoicesWeekData(month);
-  const data = monthsData;
+  const { month } = useMonthStore();
+  const data: TotalCashFlowDataI[] = useTotalCashFlowData(month);
 
   const width: string | number = 800;
   const height: string | number = 280;
@@ -104,7 +41,7 @@ const InvoicesBarChart = () => {
       .append("g")
       .attr("class", "x-axis")
       .attr("transform", `translate(0, ${height - 20})`)
-      .classed("text-slate-400 text-base", true)
+      .classed("text-slate-400 text-base capitalize", true)
       .call(xAxis)
       .select(".domain")
       .style("visibility", "hidden");
@@ -117,9 +54,9 @@ const InvoicesBarChart = () => {
       .join("rect")
       //@ts-ignore
       .attr("x", (d) => xScale(d.month))
-      .attr("y", (d) => yScale(d.value2))
+      .attr("y", (d) => yScale(d.in))
       .attr("width", xScale.bandwidth())
-      .attr("height", (d) => height - yScale(d.value2))
+      .attr("height", (d) => height - yScale(d.in))
       .attr("transform", `translate(0, -30)`)
       .attr("fill", "#02bb7d")
       .attr("rx", 12);
@@ -129,9 +66,9 @@ const InvoicesBarChart = () => {
       .join("rect")
       //@ts-ignore
       .attr("x", (d) => xScale(d.month))
-      .attr("y", (d) => yScale(d.value1))
+      .attr("y", (d) => yScale(d.out))
       .attr("width", xScale.bandwidth())
-      .attr("height", (d) => height - yScale(d.value1))
+      .attr("height", (d) => height - yScale(d.out))
       .attr("transform", `translate(0, -30)`)
       .attr("fill", "#47b747")
       .attr("rx", 12)
