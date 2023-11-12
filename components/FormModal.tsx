@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 
 import Form from "./From";
+import { blue } from "@mui/material/colors";
 
 const style = {
   position: "absolute",
@@ -29,9 +30,14 @@ const FormModal = () => {
         onClick={handleOpen}
         sx={{
           color: "var(--green-primary)",
+          backgroundColor: blue[100],
+          textTransform: "capitalize",
+          fontWeight: "bold",
+
+          "&:hover": {
+            backgroundColor: blue[200],
+          },
         }}
-        color="inherit"
-        className="bg-blue-100 hover:bg-blue-200 capitalize font-bold "
       >
         New Sales Invoice
       </Button>
