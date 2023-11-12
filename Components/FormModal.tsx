@@ -25,7 +25,16 @@ const FormModal = () => {
 
   return (
     <div>
-      <Button onClick={handleOpen} color="info">New Sales Invoice</Button>
+      <Button
+        onClick={handleOpen}
+        sx={{
+          color: "var(--green-primary)",
+        }}
+        color="inherit"
+        className="bg-blue-100 hover:bg-blue-200 capitalize font-bold "
+      >
+        New Sales Invoice
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -33,7 +42,7 @@ const FormModal = () => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-        <Form handleClose={handleClose}/>
+          <Form handleClose={handleClose} />
         </Box>
       </Modal>
     </div>
