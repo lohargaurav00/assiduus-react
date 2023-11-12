@@ -20,5 +20,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deploy on Netlify
 
-visit: [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+visit: [https://assiduus-react-lohargaurav00.netlify.app/](https://assiduus-react-lohargaurav00.netlify.app/)
  
